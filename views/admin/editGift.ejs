@@ -1,0 +1,84 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Sweet Surprise Gift Shop</title>
+
+<!--navbar-->
+<link rel="stylesheet" href="../css/navbar.css">
+<link rel="stylesheet" href="../css/adminCSS.css">
+<link rel="stylesheet" href="../css/main.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!--font-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Concert+One&family=Handlee&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Passion+One&family=Quicksand&display=swap" rel="stylesheet">
+<style>
+input[type=text] {
+  width: 70%;
+  padding: 15px 25px;
+  margin: 10px 0;
+  box-sizing: border-box;
+ font-family: 'Quicksand', sans-serif;
+}
+</style>
+</head>
+<body>
+	<!--- ----navigation bar--->
+<div class="contain">
+    <div class="navbar">
+		<div class="padding">
+	<ul>  
+	<li class="active">
+	<li><a href="/home"><i class="fa fa-home" style="font-size:36px"></i>Home</a></li>
+	<li><a href="/logout"><i class="fa fa-user" style="font-size:36px"></i>Welcome Admin</a>
+	</li>
+		</li>
+	</ul>
+   </div>
+	</div>
+	</div>
+   
+<!-----navigation bar----->
+<br><br><br>
+<div class="boxmodel">
+	<div class="round">
+	<h1 style="font-family:Handlee">Update Standard Gift</h1><br><br>
+			<form action="/editGift<%= data._id %>"  method="post" enctype="multipart/form-data" font-family:Concert One>
+				<br><br><br>
+		
+		<label for="gift name">Gift Name</label><br><br>
+	<input type="text" name="nameGift" value="<%= data.nameGift %>"><br><br>
+	<!--<input type="file" class="file-uploader pull-left" name="imageGift"><br/> -->
+		<label for="gift price">Gift Price</label><br><br>
+		<input type="text" name="priceGift" placeholder="RM" value="<%= data.priceGift %>" p><br><br><br>
+		<label for="gift category">Gift Category</label><br><br>
+		<input type="text" name="categoryGift" value="<%= data.categoryGift %>"><br><br>
+				<a href="/home"><i class="fa fa-chevron-circle-left" style="font-size:30px"></i></a>
+				<button type="submit" class="submitButton" onClick="openPopup()">Update</button>
+			</form>			
+			<div class="popup" id="popup">
+				<img src="admin/public/assets/tick.png" alt="tick">
+				<h2>Success</h2>
+				<h3>New gift is succesfully updated!</h3>
+				<button type="button" onclick="closePopup()">OK</button>
+			</div>
+		</div>
+</div>		
+    <script>
+        let popup=document.getElementById("popup");
+
+         function openPopup()
+        {
+            popup.classList.add("open-popup")
+        }
+         function closePopup()
+        { 
+            popup.classList.remove("open-popup")
+        }
+        </script>
+    <!---->
+
+</body>
+</html>

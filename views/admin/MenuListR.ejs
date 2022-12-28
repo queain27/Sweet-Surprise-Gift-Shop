@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Menu List Royal</title>
+
+<!--navbar-->
+<link rel="stylesheet" href="../css/navbar.css">
+<link rel="stylesheet" href="../css/adminCSS.css">
+<link rel="stylesheet" href="../css/main.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!--font-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Concert+One&family=Handlee&display=swap" rel="stylesheet">
+	
+</head>
+<body>
+	<!--- ----navigation bar--->
+<div class="contain">
+    <div class="navbar">
+		<div class="padding">
+	<ul>  
+	<li class="active">
+	<li><a href="/home"><i class="fa fa-home" style="font-size:36px"></i>Home</a></li>
+	<li><a href="/logout"><i class="fa fa-user" style="font-size:36px"></i>Welcome Admin</a>
+	</li>
+		</li>
+	</ul>
+   </div>
+	</div>
+	</div>
+   
+<!-----navigation bar----->
+<br><br><br>
+   <div class="boxmodel">
+    <a href="/home"><i class="fa fa-chevron-circle-left" style="font-size:30px"></i></a>
+        <h1 style="font-family:'Concert One',cursive">Menu Royal List </h1><br><br>
+            <!--count nk check ad product ke tak-->
+         	
+            <table class="table table-striped alignmiddle">
+                <thead>
+                    <tr class="home">
+                        <th>Gift</th>
+                        <th>Price</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% for(var i = 0; i <=data.length -1; i++) { %>
+                    <tr> 
+                        <td><%= data[i].nameGiftR %></td>
+                        <td><%= data[i].priceGiftR %></td>
+                        <td><a href="/editGiftR<%= data[i]._id %>">Edit</a></td>
+                        <td><a class="confirmDeletion" href="/deleteProductR/<%= data[i]._id %>">Delete</a></td>  
+                    </tr>
+                    <% } %>
+                </tbody>
+            </table>
+            
+	</div>
+    </body>
+    </html>

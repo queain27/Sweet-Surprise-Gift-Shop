@@ -1,0 +1,119 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Shopping Cart Sweet Surprise</title>
+
+<!--navbar-->
+<link rel="stylesheet" href="../css/navbar.css">
+<link rel="stylesheet" href="../css/adminCSS.css">
+<link rel="stylesheet" href="../css/main.css">
+<link rel="stylesheet" href="../css/cart.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!--font-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Concert+One&family=Handlee&display=swap" rel="stylesheet">
+
+</head>
+<body>
+	<!--- ----navigation bar--->
+<div class="contain">
+    <div class="navbar">
+		<div class="padding">
+	<ul>  
+	<li class="active">
+	<li><a href="user/userhomepage.html"><i class="fa fa-home" style="font-size:30px"></i>Home</a></li>
+	<li><a href="#"><i class="fa solid fa-gift" style="font-size:30px"></i>Gift</a>
+	<div class="sub-navbar-1">
+	<ul>
+	  <li><a href="/standard">Standard</a></li>
+		 <li><a href="/medium">Medium</a></li>
+		 <li><a href="/royal">Royal</a></li>
+	     <li><a href="/package">package</a></li>
+	</ul>
+	</div>
+	</li>
+	<li><a href="/checkout"><i class="fa fa-shopping-cart" style="font-size:30px"></i>Cart</a> </li>
+	<li><a href="#"><i class="fa fa-user" style="font: size 30px"></i>Profile</a>
+		<div class="sub-navbar-1">
+		<ul>
+		  <li><a href="/profile">My Profile</a></li>
+			 <li><a href="/updateprofile">Update Profile</a></li>
+			 <li><a href="/logout">Log out</a></li>
+		</ul>
+		</div>
+		</li>
+	
+    </li>
+	</ul>
+   </div>
+	</div>
+	</div>
+  <br><br><br><br><br><br><br><br><br>
+    <!-- navigation bar-->
+    <% if (typeof cart !== "undefined") { %>
+
+      <h1>Sweet Surprise Gift Shop</h1>
+      <br><br>
+      
+      <table class="table table-striped alignmiddle">
+          <tr>
+              <th>Gift</th>
+              <th>Price</th>
+              <th>Quantity</th>
+              <th>Subtotal</th>
+          </tr>
+          
+          <% var total = 0; %>
+          <% cart.forEach(function(product){ %>
+          <% var sub = parseFloat(product.qty * product.price).toFixed(2) %>
+          <% total += +sub %>
+          <tr>
+              <td><%= product.title %></td>
+              <td>RM<%= product.price %></td>
+              <td><%= product.qty %></td>
+              <td>
+                  <a href="/cart/update/<%= product.title %>?action=add">ADD</a>&nbsp;
+                  <a href="/cart/update/<%= product.title %>?action=remove">REMOVE</a>&nbsp;
+                  <a href="/cart/update/<%= product.title %>?action=clear">CLEAR</a>&nbsp;
+              </td>
+              <td>RM<%= sub %></td>
+          </tr>
+          <% }); %>
+          <tr>
+              <td colspan="6" align="right"><b>Total: </b> RM<%= parseFloat(total).toFixed(2) %></td>
+          </tr>
+          <tr>
+              <td colspan="5" align="right">
+                  <a class="clearcart btn btn-danger" href="/cart/clear">Clear cart</a>
+              </td>
+          </tr>  
+      </table>
+      <% } else {%>
+      <h3 class="text-center">Your cart is empty.</h3>
+      <% } %>
+      
+      <script>
+          
+      $(function() {
+         
+          $('a.clearcart').on('click', function () {
+              if (!confirm('Confirm clear cart'))
+                  return false;
+          });
+          
+          $('a.buynow').on('click', function (e) {
+              e.preventDefault();
+              
+              $.get('/cart/buynow', function() {
+                  $('form.pp input[type=image]').click();
+                  $('.ajaxbg').show();
+              });
+          });
+              
+      });
+          
+      </script>
+  </body>
+  </html>

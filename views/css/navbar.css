@@ -1,0 +1,87 @@
+/* CSS Document */
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.padding {
+  background-color: #b5cdd7;
+  background-clip: content-box;
+}
+body {
+  background-position: center;
+  box-sizing: border-box;
+  background-color: #bfd4db;
+}
+
+.contain {
+  max-width: 2000px;
+  margin: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.navbar {
+  text-align: right;
+}
+.navbar ul {
+  display: inline-flex;
+  list-style: none;
+  color: #b2d9ea;
+}
+.navbar ul li {
+  width: 120px;
+  margin: 15px;
+  padding: 15px;
+}
+a {
+  text-decoration: none;
+  color: #555;
+  font-size: 20px;
+}
+p {
+  color: #555;
+}
+.navbar ul li a {
+  text-decoration: none;
+  color: #000000;
+}
+
+.active,
+.navbar ul li:hover {
+  background: transparent;
+  border-radius: 3px;
+}
+.navbar .fa {
+  margin-right: 8px;
+}
+.sub-navbar-1 {
+  display: none;
+}
+.navbar ul li:hover .sub-navbar-1 {
+  display: block;
+  position: absolute;
+  background: #b2d9ea;
+  margin-top: 15px;
+  margin-left: -15px;
+}
+.navbar ul li:hover .sub-navbar-1 ul {
+  display: block;
+  margin: 10px;
+}
+.navbar ul li:hover .sub-navbar-1 ul li {
+  width: 150px;
+  padding: 10px;
+  border-bottom: 1px dotted #fff;
+  background: transparent;
+  border-radius: 0;
+
+  text-align: right;
+}
+.navbar ul li:hover .sub-navbar-1 ul li:last-child {
+  border-bottom: none;
+}
+.navbar ul li:hover .sub-navbar-1 ul li a:hover {
+  color: #b2ff00;
+}

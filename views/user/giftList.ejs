@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Profile  Page</title>
+   
+<!--navbar-->
+<link rel="stylesheet" href="../css/navbar.css">
+<link rel="stylesheet" href="../css/adminCSS.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<!--navbar-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <link href="https://netdna.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+	<script src="https://netdna.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    
+	<!--- ----navigation bar--->
+<div class="contain">
+    <div class="navbar">
+		<div class="padding">
+	    
+     <ul>  
+	        <li class="active">
+	       <li><a href="./user/userhomepage.html"><i class="fa fa-home" style="font-size:36px"></i>Home</a></li>
+	       <li><a href="#"><i class="fa solid fa-gift" style="font-size:36px"></i>Gift</a>
+	
+        <div class="sub-navbar-1">
+	      <ul>
+	           <li><a href="#">Standard</a></li>
+		      <li><a href="#">Medium</a></li>
+		      <li><a href="#">Royal</a></li>
+	          <li><a href="#">package</a></li>
+	      </ul>
+
+	   </div>
+	
+	    <li><a href="#"><i class="fa fa-shopping-cart" style="font-size:36px"></i>Cart</a> </li>
+	    <li><a href="/logout"><i class="fa fa-user" style="font-size:25px"></i><%= data.username %></a></li>
+	
+	</ul>
+   
+	</div>
+	</div>
+   
+<!-----navigation bar----->
+
+<!-----homepage css----->
+  <style>
+
+
+    .small-container
+    {max-width:1080px;
+     margin:auto;
+	 padding-left:25px;
+	 padding-right:25px;
+	}
+	    h1
+		{
+			font-size : 50px;
+			 font-family: "font-family:'Mali'"cursive;
+			color:#FF3399;
+			animation-name:Title;
+			animation-duration: 2s;
+			animation-iteration-count: infinite;
+
+		}
+		
+         @keyframes Title
+		{
+			from {color:#003366;}
+			to{color:#FF3399};
+
+		}
+		  h2
+       { 
+       	     text-align:center;
+       	     font-size : 30px;
+			 font-family: "Lucida Handwriting",cursive;
+			color:#00b33c;
+			animation-name:hai;
+			animation-duration: 2s;
+			animation-iteration-count: infinite;
+       }
+        @keyframes hai
+		{
+			from {color:#00b33c ;}
+			to{color:black};
+
+		}
+
+	 
+	  .col
+       { flex-basis: 50%;
+         min-width: 300px;
+ 
+        }
+		.col img
+       { display:flex;
+         max-width: 200%;
+         padding: 5px 250px;
+	     margin-top:30px;
+	     width :60%;
+		 transition:transform 0.5s;
+       }
+	   .col:hover
+	  { transform: translateY(-15px);
+	  }
+
+	 
+	  .col-4
+	  { flex-basis:25px;
+      padding:10px;
+	  min-width:200px;
+	  margin-bottom:50px;
+	  transition:transform 0.5s;
+	  }
+	  .col-3 img{
+	  width:100%;
+	  }
+	  .col-3:hover
+	  { transform: translateY(-5px);
+	  }
+	  .row
+     { display: flex;
+       align-items: center;
+       flex-wrap: wrap;
+       justify-content: space-around;
+      }
+      .col-3 p
+	  { font-size:14px;
+	  }
+	  .rating .fa{
+	  color:#000000;
+	  }
+	 
+
+	
+   </style>
+</head>
+<!--- ----header--->
+
+
+<!---homepage css----->
+<!-----recommend----->
+<div class="small-container" align="center">
+	 
+<!-----recommend----->
+
+<!-----Button----->
+<!-- nanti call from database-->
+<div class="small-container">
+<h1>Sweet Surprise Gift Shop</h1>
+	   <div class="row">
+			<div class="col-3">
+				
+			     <img src = "<%= product.imageGift %>" alt = "giftImage" align = "middle" width="350" height="206.25">
+				 <h3><%= product.nameGift %>"</h3>
+			      <h3>(RM)"<%= product.priceGift %>"</h3>
+			     
+			    <a href="/cart/add/<%=p.slug %>"><button class="button-55" role="button" style="width:100px;height:50px;">
+			       <i class="fa fa-shopping-cart"></i></button></a>
+			
+			    
+			</div>
+			</div>	
+		</div>
+<!-----Button----->
+	<style>
+
+	 .btn{
+		 width:20%;
+	display:inline-block;
+	background: #1351E4;
+	color:#FFFFFF;
+	padding:8px 30px;
+	margin:10px 0;
+	border-radius:30px;
+	transition:background 0.5s;
+    }
+    .btn:hover
+    {background:#563434;
+    }
+	
+	</style>
+	<center>
+    </form>
+	</div>
+	</center>
+<!-----Button----->
+	 </body>
+   </html> 

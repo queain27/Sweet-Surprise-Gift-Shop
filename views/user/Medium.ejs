@@ -1,0 +1,187 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Medium Menu</title>
+
+<!--navbar-->
+<link rel="stylesheet" href="../css/navbar.css">
+<link rel="stylesheet" href="../css/adminCSS.css">
+<link rel="stylesheet" href="../css/main.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!--font-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Concert+One&family=Handlee&display=swap" rel="stylesheet">
+	
+
+<body>
+	<!--- ----navigation bar--->
+<div class="contain">
+    <div class="navbar">
+		<div class="padding">
+	<ul>  
+	<li class="active">
+	<li><a href="user/userhomepage.html"><i class="fa fa-home" style="font-size:30px"></i>Home</a></li>
+	<li><a href="#"><i class="fa solid fa-gift" style="font-size:30px"></i>Gift</a>
+	<div class="sub-navbar-1">
+	<ul>
+	  <li><a href="/standard">Standard</a></li>
+		 <li><a href="/medium">Medium</a></li>
+		 <li><a href="/royal">Royal</a></li>
+	     <li><a href="/package">package</a></li>
+	</ul>
+	</div>
+	</li>
+	<li><a href="/loyalty"><i class="fa fa-shopping-cart" style="font-size:32px"></i>Loyalty Voucher</a> </li>
+	<li><a href="#"><i class="fa fa-user" style="font: size 30px"></i>Profile</a>
+		<div class="sub-navbar-1">
+		<ul>
+		  <li><a href="/profile">My Profile</a></li>
+			 <li><a href="/updateprofile">Update Profile</a></li>
+			 <li><a href="/logout">Log out</a></li>
+		</ul>
+		</div>
+		</li>
+	
+    </li>
+	</ul>
+   </div>
+	</div>
+	</div>
+   
+<!-----navigation bar----->
+<br><br><br>
+<h1 style="text-align:center;"style="font-family:'Concert One',cursive">Medium Menu List (RM 20 - RM40)</h1><br><br>
+<div class="small-container">
+			<div class="row">
+				<div class="col-3">
+					<% for(var i = 0; i <=data.length -1; i++) { %>
+						<%= data[i].nameGiftM %><br>
+						RM<%= data[i].priceGiftM %> &nbsp;&nbsp;&nbsp;
+						<a href=" https://drive.google.com/drive/folders/1V4QFGdFwWPdBIvX913jMovOJJoCJNUxB?usp=sharing"><button class="button-55" role="button" style="width:150px;height:50px;">
+							<i class="fa fa-file-photo-o"></i>View Photo</button></a><br><br><br>
+			     <% } %> 		 
+				
+				</div>
+				</div>
+				</div>
+<!-----homepage css----->
+<style>
+
+
+    .small-container
+    {max-width:1080px;
+     margin:auto;
+	 padding-left:25px;
+	 padding-right:25px;
+	}
+	    h1
+		{
+			font-size : 50px;
+			 font-family: "font-family:'Mali'"cursive;
+			color:#FF3399;
+			animation-name:Title;
+			animation-duration: 2s;
+			animation-iteration-count: infinite;
+
+		}
+		
+         @keyframes Title
+		{
+			from {color:#003366;}
+			to{color:#FF3399};
+
+		}
+		  h2
+       { 
+       	     text-align:center;
+       	     font-size : 30px;
+			 font-family: "Lucida Handwriting",cursive;
+			color:#00b33c;
+			animation-name:hai;
+			animation-duration: 2s;
+			animation-iteration-count: infinite;
+       }
+        @keyframes hai
+		{
+			from {color:#00b33c ;}
+			to{color:black};
+
+		}
+
+	 
+	  .col
+       { flex-basis: 50%;
+         min-width: 300px;
+ 
+        }
+		.col img
+       { display:flex;
+         max-width: 200%;
+         padding: 5px 250px;
+	     margin-top:30px;
+	     width :60%;
+		 transition:transform 0.5s;
+       }
+	   .col:hover
+	  { transform: translateY(-15px);
+	  }
+
+	 
+	  .col-4
+	  { flex-basis:25px;
+      padding:10px;
+	  min-width:200px;
+	  margin-bottom:50px;
+	  transition:transform 0.5s;
+	  }
+	  .col-3 img{
+	  width:100%;
+	  }
+	  .col-3:hover
+	  { transform: translateY(-5px);
+	  }
+	  .row
+     { display: flex;
+       align-items: center;
+       flex-wrap: wrap;
+       justify-content: space-around;
+      }
+      .col-3 p
+	  { font-size:14px;
+	  }
+	  .rating .fa{
+	  color:#000000;
+	  }
+	 
+
+	
+   </style>
+</head>
+<!--- ----header--->
+
+
+<!---homepage css----->
+<!-----recommend----->
+<!-----Button----->
+	<style>
+
+	 .btn{
+		 width:20%;
+	display:inline-block;
+	background: #1351E4;
+	color:#FFFFFF;
+	padding:8px 30px;
+	margin:10px 0;
+	border-radius:30px;
+	transition:background 0.5s;
+    }
+    .btn:hover
+    {background:#563434;
+    }
+	
+	</style>
+<!-----Button----->
+	 </body>
+   </html> 
